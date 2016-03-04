@@ -40,6 +40,9 @@ export class AppComponent {
     this._log.debug('first debug withou args does not work at all', 'other config not passed along args')('and args again'); // working
     this._log.debug('change args again'); // not working
 
+    let curry = this._log.debug('first debug withou args does not work at all', 'other config not passed along args');
+    curry('curry curry');
+
     // curring sample
     let greetCurried = (greeting) => {
       return (name) => {
