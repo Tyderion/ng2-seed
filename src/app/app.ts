@@ -28,7 +28,30 @@ export class AppComponent {
   private _log: Logger = new Logger('AppComponent');
 
   constructor() {
-    this._log.info('constructor')(AppConfig);
+    this._log.info('log without args should work, especially with info'); // not working
+    this._log.info('constructor')(AppConfig); // working
+    this._log.info('curring has not stored my previouse things'); // not working
+
+    this._log.debug('first debug withou args does not work at all'); // not working
+    this._log.debug('first debug withou args does not work at all')('some config'); // working
+    this._log.debug('change some config'); // not working
+
+    this._log.debug('first debug withou args does not work at all', 'other config not passed along args'); // not working
+    this._log.debug('first debug withou args does not work at all', 'other config not passed along args')('and args again'); // working
+    this._log.debug('change args again'); // not working
+
+    // curring sample
+    let greetCurried = (greeting) => {
+      return (name) => {
+        console.log(greeting + ', ' + name);
+      };
+    };
+
+    let greetHello = greetCurried('Hello');
+
+    greetHello('Heidi');
+    greetHello('Eddie');
+    greetCurried('Hi there')('Howard');
   }
 
   public sayHello(): string {
