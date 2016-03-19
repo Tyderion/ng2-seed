@@ -1,5 +1,5 @@
 //import * as moment from 'moment'; // same as import moment = require('moment');
-//import moment = require('moment');
+import moment = require('moment');
 import {AppConfig} from '../app.config';
 
 interface ILoggerMethods {
@@ -10,10 +10,10 @@ interface ILoggerMethods {
 }
 
 export enum ILoggerLevel {
-  NONE  = 0,
-  INFO  = 1,
+  NONE = 0,
+  INFO = 1,
   DEBUG = 2,
-  WARN  = 3,
+  WARN = 3,
   ERROR = 4,
 }
 
@@ -92,8 +92,8 @@ export default class Logger {
   }
 
   private formatter(message: string): string {
-    //return `[${moment().format('YYYY-MM-DD HH:MM:SS:SSS')} - ${this.className}] ${message}:`;
-    return `[${new Date()} - ${this.className}] ${message}:`;
+    return `[${moment().format('DD.MM.YYYY HH:MM:SS:SSS')} - ${this.className}] ${message}:`;
+    // return `[${new Date()} - ${this.className}] ${message}:`;
   }
 
 }
