@@ -3,4 +3,10 @@
     <span *ngIf="isExpanded" [class.special]="test">O</span>
     <span *ngIf="!isExpanded">X</span>
   </div>
+  <div class="fab__sub-actions" *ngIf="isExpanded">
+    <div class="fab__sub-action" *ngFor="#action of subActions"
+         (click)="action.onClick()">
+      {{action.icon}}
+    </div>
+  </div>
 </div>

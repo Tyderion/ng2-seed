@@ -1,10 +1,11 @@
 $size: 50px;
 $primary-color: blue;
-.fab {
+
+@mixin round-button($color, $size) {
   width: $size;
   height: $size;
   border-radius: 50%;
-  background: $primary-color;
+  background: $color;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -12,10 +13,34 @@ $primary-color: blue;
 
   color: white;
   cursor: pointer;
+}
+
+.fab {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
 
   position: fixed;
   right: 0;
   bottom: 0;
   margin-right: 100px;
   margin-bottom: 100px;
+
+  &__main {
+    @include round-button($primary-color, $size);
+  }
+
+  &__sub-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__sub-action {
+    @include round-button($primary-color, $size*0.8);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

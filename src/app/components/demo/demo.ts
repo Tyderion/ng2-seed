@@ -32,11 +32,12 @@ export class Demo {
       onClick: (id: string) => this._log.debug('first')('click')
     },
     {
-      id: 'first',
-      icon: 'A',
-      onClick: (id: string) => this._log.debug('first')('click')
+      id: 'second',
+      icon: 'B',
+      onClick: (id: string) => this._log.debug('second')('click'),
+      classes: ['one', 'two']
     }
-  ]
+  ];
 
 
   constructor(http: Http) {

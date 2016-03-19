@@ -1,4 +1,5 @@
 import {Component, Input} from 'angular2/core';
+
 import {Http} from 'angular2/http';
 import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
 
@@ -39,5 +40,6 @@ export class Fab {
 export interface ISubAction {
   id: string;
   icon: string;
+  classes?: string[];
   onClick: (string) => void;
 }
