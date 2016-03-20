@@ -1,28 +1,19 @@
 <h3>Demo</h3>
 <fab>
-  <div action-expanded>
+  <fab-action>
     <i class="fa fa-share"></i>
-  </div>
-  <div action>
-    <i class="fa fa-share-square-o"></i>
-  </div>
+  </fab-action>
   <fab-sub-action>
     <i class="fa fa-comment" (click)="createComment()"></i>
   </fab-sub-action>
   <fab-sub-action>
     <i class="fa fa-envelope" (click)="createMail()"></i>
   </fab-sub-action>
-  <!--<div>-->
-  <!--<i class="fa fa-comment"></i>-->
-  <!--</div>-->
+  <fab-sub-action>
+    <i class="fa fa-calendar" (click)="openCalendar()"></i>
+  </fab-sub-action>
 </fab>
 <p>This is the about component!</p>
-<!--<div class="fab">-->
-
-<!--<fab-sub-action>-->
-<!--<i class="fa fa-comment"></i>-->
-<!--</fab-sub-action>-->
-<!--</div>-->
 <div>
   Some sub routes
   <a [routerLink]=" ['Demo1']">SubDemo1</a>

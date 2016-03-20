@@ -1,9 +1,9 @@
 <div class="fab">
   <div class="fab__main" (click)="onClick()">
-    <ng-content *ngIf="isExpanded" select="[action-expanded]"></ng-content>
-    <ng-content *ngIf="!isExpanded" select="[action]"></ng-content>
+    <ng-content *ngIf="isExpanded" select="fab-action-expanded"></ng-content>
+    <ng-content *ngIf="!isExpanded || !hasExpandedAction" select="fab-action"></ng-content>
   </div>
-  <div class="fab__sub-actions" *ngIf="isExpanded">
+  <div class="fab__sub-actions" *ngIf="isExpanded" (click)="onSubActionClick()">
     <ng-content select="fab-sub-action"></ng-content>
   </div>
 </div>

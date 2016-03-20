@@ -6,14 +6,16 @@ import {Demo1} from './../demo1/demo1';
 import {Demo2} from './../demo2/demo2';
 import Logger from '../../utils/logger.service';
 import {Fab, IAction} from '../fab/fab';
-import {FabSubAction} from '../fab-sub-action/fab-sub-action';
+import {FabAction} from '../fab/fab-action';
+import {FabActionExpanded} from '../fab/fab-action-expanded';
+import {FabSubAction} from '../fab/fab-sub-action';
 
 @Component({
   selector: 'demo',
   template: require('./demo.html'),
   styles: [require('./demo.scss').toString()],
   providers: [],
-  directives: [ROUTER_DIRECTIVES, Fab, FabSubAction],
+  directives: [ROUTER_DIRECTIVES, Fab, FabSubAction, FabAction, FabActionExpanded],
   pipes: []
 })
 
@@ -55,6 +57,10 @@ export class Demo {
 
   public createMail() {
     this._log.debug('createMail')('clicked');
+  }
+
+  public openCalendar() {
+    this._log.debug('openCalendar')('clicked');
   }
 
 
