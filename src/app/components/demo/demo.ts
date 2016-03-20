@@ -5,7 +5,7 @@ import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
 import {Demo1} from './../demo1/demo1';
 import {Demo2} from './../demo2/demo2';
 import Logger from '../../utils/logger.service';
-import {Fab, ISubAction} from '../fab/fab';
+import {Fab, IAction} from '../fab/fab';
 
 @Component({
   selector: 'demo',
@@ -25,19 +25,36 @@ export class Demo {
 
   private _log: Logger = new Logger('Demo');
 
-  private actions: ISubAction[] = [
+  private mainAction: IAction = {
+    id: 'first',
+    text: '',
+    onClick: () => {
+    },
+    classes: ['fa', 'fa-share']
+  };
+
+  private actions: IAction[] = [
     {
       id: 'first',
-      icon: 'A',
-      onClick: (id: string) => this._log.debug('first')('click')
+      text: '',
+      onClick: (id: string) => this._log.debug('first')('click'),
+      classes: ['fa', 'fa-comment']
     },
     {
       id: 'second',
-      icon: 'B',
+      text: '',
       onClick: (id: string) => this._log.debug('second')('click'),
-      classes: ['one', 'two']
+      classes: ['fa', 'fa-envelope']
     }
   ];
+
+  public createComment() {
+    this._log.debug('createComment')('clicked');
+  }
+
+  public createMail() {
+    this._log.debug('createMail')('clicked');
+  }
 
 
   constructor(http: Http) {

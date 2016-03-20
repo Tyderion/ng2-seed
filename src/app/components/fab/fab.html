@@ -1,12 +1,9 @@
 <div class="fab">
   <div class="fab__main" (click)="onClick()">
-    <span *ngIf="isExpanded" [class.special]="test">O</span>
-    <span *ngIf="!isExpanded">X</span>
+    <ng-content *ngIf="isExpanded" select="[action-expanded]"></ng-content>
+    <ng-content *ngIf="!isExpanded" select="[action]"></ng-content>
   </div>
   <div class="fab__sub-actions" *ngIf="isExpanded">
-    <div class="fab__sub-action" *ngFor="#action of subActions"
-         (click)="action.onClick()">
-      {{action.icon}}
-    </div>
+    <ng-content select="fab-sub-action"></ng-content>
   </div>
 </div>
