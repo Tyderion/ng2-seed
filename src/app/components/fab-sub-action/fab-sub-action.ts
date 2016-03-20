@@ -8,7 +8,7 @@ import {NgClass} from 'angular2/common';
 
 @Component({
   selector: 'fab-sub-action',
-  template: '<ng-content></ng-content>',
+  template: require('./fab-sub-action.html'),
   styles: [],
   providers: [],
   directives: [],

@@ -6,13 +6,14 @@ import {Demo1} from './../demo1/demo1';
 import {Demo2} from './../demo2/demo2';
 import Logger from '../../utils/logger.service';
 import {Fab, IAction} from '../fab/fab';
+import {FabSubAction} from '../fab-sub-action/fab-sub-action';
 
 @Component({
   selector: 'demo',
   template: require('./demo.html'),
   styles: [require('./demo.scss').toString()],
   providers: [],
-  directives: [ROUTER_DIRECTIVES, Fab],
+  directives: [ROUTER_DIRECTIVES, Fab, FabSubAction],
   pipes: []
 })
 
