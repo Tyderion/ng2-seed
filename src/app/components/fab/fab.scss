@@ -27,8 +27,13 @@ $primary-color: blue;
   margin-right: 100px;
   margin-bottom: 100px;
 
+  &.vertical {
+    flex-direction: column-reverse;
+  }
+
   &__main {
     @include round-button($primary-color, $size);
+
   }
 
   &__sub-actions {
@@ -36,11 +41,13 @@ $primary-color: blue;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    &.vertical {
+      flex-direction: column;
+    }
   }
 
   &__sub-action {
     @include round-button($primary-color, $size*0.8);
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 5px;
   }
 }

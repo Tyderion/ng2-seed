@@ -20,6 +20,9 @@ import {FabSubAction} from './fab-sub-action';
 
 export class Fab {
 
+  @Input('vertical')
+  public isVertical: boolean = false;
+
   private _log: Logger = new Logger('Fab');
   private _debug = this._log.debug('debug');
 

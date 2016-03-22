@@ -1,5 +1,10 @@
 <h3>Demo</h3>
-<fab>
+
+<button id="isVertical" type="button" (click)="toggleOrientation()">Click to change FAB
+  orientation
+</button>
+
+<fab [vertical]="isVertical">
   <fab-action>
     <i class="fa fa-share"></i>
   </fab-action>

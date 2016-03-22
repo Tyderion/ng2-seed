@@ -26,6 +26,8 @@ import {FabSubAction} from '../fab/fab-sub-action';
 
 export class Demo {
 
+  public isVertical: boolean = false;
+
   private _log: Logger = new Logger('Demo');
 
   private mainAction: IAction = {
@@ -61,6 +63,10 @@ export class Demo {
 
   public openCalendar() {
     this._log.debug('openCalendar')('clicked');
+  }
+
+  public toggleOrientation() {
+    this.isVertical = !this.isVertical;
   }
 
 

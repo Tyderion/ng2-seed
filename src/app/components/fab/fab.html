@@ -1,9 +1,9 @@
-<div class="fab">
+<div class="fab" [class.vertical]=" isVertical">
   <div class="fab__main" (click)="onClick()">
     <ng-content *ngIf="isExpanded" select="fab-action-expanded"></ng-content>
     <ng-content *ngIf="!isExpanded || !hasExpandedAction" select="fab-action"></ng-content>
   </div>
-  <div class="fab__sub-actions" *ngIf="isExpanded" (click)="onSubActionClick()">
+  <div class="fab__sub-actions" *ngIf="isExpanded" (click)="onSubActionClick()" [class.vertical]="isVertical">
     <ng-content select="fab-sub-action"></ng-content>
   </div>
 </div>
