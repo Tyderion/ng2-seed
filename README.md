@@ -10,11 +10,6 @@
 	- on OSX use [homebrew](http://brew.sh) `brew install node`
 	- on Windows use [chocolatey](https://chocolatey.org/) `choco install nodejs`
 
-2. Install these NPM packages globally
-  ```
-  npm install -g webpack typescript typings karma
-  ```
-
 ## Dependencies
 1. Navigate to your project folder to install all dependencies
   ```
