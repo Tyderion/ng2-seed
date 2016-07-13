@@ -16,7 +16,8 @@
     "test:live": "./node_modules/.bin/karma start --auto-watch --no-single-run",
     "webdriver": "./node_modules/protractor/bin/webdriver-manager update",
     "e2e": "./node_modules/.bin/protractor",
-    "e2e:live": "npm run e2e -- --elementExplorer"
+    "e2e:live": "npm run e2e -- --elementExplorer",
+    "postinstall": "typings install"
   },
   "repository": {
     "type": "git",
