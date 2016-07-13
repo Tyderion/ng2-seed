@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "5.9.0"
+install:
+  - npm install
+before_script:
+  - typings install
+script:
+  - npm test
+  - npm run build
+notifications:
+  email: false

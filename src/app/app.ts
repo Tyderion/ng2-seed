@@ -1,34 +1,33 @@
 // TODO: https://github.com/auth0/angular2-authentication-sample/tree/master/src
 
-import {Component} from 'angular2/core';
-import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
-import {Home} from './components/home/home';
-import {Demo} from './components/demo/demo';
-import Logger from './utils/logger.service';
-
-import {AppConfig} from './app.config.ts';
+import AppConfig from './app.config.ts';
 
 @Component({
   selector: 'app',
-  providers: [],
+  providers: [ TranslateService ],
   template: require('./app.html'),
   styles: [require('./app.scss').toString()],
-  directives: [ROUTER_DIRECTIVES],
-  pipes: []
+  directives: [ ROUTER_DIRECTIVES ],
+  pipes: [ TranslatePipe ]
 })
+export class AppComponent implements OnInit {
 
-@RouteConfig([
-  new Route({ path: '/home', component: Home, name: 'Home', useAsDefault: true }),
-  new Route({ path: '/demo/...', component: Demo, name: 'Demo' })
-])
+  constructor(
+    private translate: TranslateService
+  ) { }
 
-export class AppComponent {
+  public ngOnInit(): void {
 
-  private _log: Logger = new Logger('AppComponent');
+    // Set Language
+    this.translate.setDefaultLang('en');
+    this.translate.setTranslation('en', require('./../assets/i18n/en.json'));
 
-  constructor() {
-    this._log.info('constructor')(AppConfig);
+    // Print configuration to console
+    console.log('App config: ', AppConfig);
   }
 
   public sayHello(): string {
