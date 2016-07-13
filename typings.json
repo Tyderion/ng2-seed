@@ -1,13 +1,13 @@
 {
   "name": "ng2-ts-boilerplate",
   "dependencies": {
-    "lodash": "registry:npm/lodash#4.0.0+20160416211519"
+    "lodash": "registry:npm/lodash#4.0.0+20160701205107"
   },
   "devDependencies": {},
   "globalDependencies": {
-    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1914a00b3c740348dae407ee0d2be89b0b58ad7f",
-    "core-js": "registry:dt/core-js#0.0.0+20160317120654",
-    "node": "registry:dt/node#6.0.0+20160514165920",
-    "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#6e7d83167d86d857817bd492786f8304f5c4a0e4"
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "node": "registry:dt/node#6.0.0+20160709114037",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723"
   }
 }
